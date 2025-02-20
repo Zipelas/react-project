@@ -3,12 +3,12 @@ import { Link, Outlet } from "react-router";
 export default function MediaPlayerLayout() {
   return (
     <div className="flex flex-col text-slate-50">
-      <header className="bg-green-900 text-4xl px-8 py-4 justify-between">
-        Header
+      <header className="flex items-center justify-center bg-green-900 text-3xl px-8 py-4 font-bold">
+        <span className="mr-2">❤</span> Mental hälsa
       </header>
 
       <div className="flex gap-2">
-        <aside className="bg-green-900 text-4xl p-8 rounded-br-3xl">
+        <aside className="bg-green-900 text-2xl p-8 rounded-br-3xl">
           <nav className="flex flex-col gap-6">
             <Link to="/">Hem</Link>
             <Link to="/depression">Depression</Link>
