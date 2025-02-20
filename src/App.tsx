@@ -14,7 +14,7 @@ export default function MediaPlayerLayout() {
             <Link to="/depression">Depression</Link>
             <Link to="/anxiety">Ångest</Link>
             <Link to="/stress">Stress</Link>
-            <Link to="/burnout">Utbrändhet</Link>
+            <Link to="/burnout">Utmattning</Link>
             <Link to="/resources">Resurser</Link>
           </nav>
         </aside>
