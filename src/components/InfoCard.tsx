@@ -16,7 +16,7 @@ export default function InfoCard({
   altText,
 }: Props) {
   return (
-    <div className="bg-white max-w-xl p-6 rounded-lg mt-10">
+    <div className="bg-white max-w-xl p-6 rounded-lg mt-10 border-2 border-black shadow-lg shadow-black">
       <h1 className="text-green-700 text-4xl font-bold mb-4 flex justify-between">
         {title}
         <img
