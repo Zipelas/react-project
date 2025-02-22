@@ -1,4 +1,5 @@
-import { Link, Outlet } from "react-router";
+import { Outlet } from "react-router";
+import Aside from "./components/Aside";
 
 export default function MediaPlayerLayout() {
   return (
@@ -8,16 +9,7 @@ export default function MediaPlayerLayout() {
       </header>
 
       <div className="flex gap-2">
-        <aside className="bg-green-900 text-2xl p-8 rounded-br-3xl">
-          <nav className="flex flex-col gap-6">
-            <Link to="/">Hem</Link>
-            <Link to="/depression">Depression</Link>
-            <Link to="/anxiety">Ångest</Link>
-            <Link to="/stress">Stress</Link>
-            <Link to="/burnout">Utmattning</Link>
-            <Link to="/resources">Resurser</Link>
-          </nav>
-        </aside>
+        <Aside />
 
         <main className="p-4 flex-1">
           <Outlet />

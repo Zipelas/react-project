@@ -2,7 +2,7 @@ import InfoCard from "../components/InfoCard";
 
 export default function Resources() {
   return (
-    <div className="bg-green-500 min-h-screen flex justify-center p-6 rounded-xl">
+    <div className="min-h-screen flex justify-center p-6 rounded-xl">
       <InfoCard
         title="Resurser"
         ingress="Stress är en naturlig reaktion i kroppen som uppstår när vi upplever hot eller fara."

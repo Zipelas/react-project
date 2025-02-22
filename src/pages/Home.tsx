@@ -1,15 +1,18 @@
 import InfoCard from "../components/InfoCard";
+import MoodTracker from "../components/MoodTracker";
 
 export default function Home() {
   return (
-    <div className="bg-green-500 min-h-screen flex justify-center p-6 rounded-xl">
+    <div className="min-h-screen flex flex-col-reverse items-center justify-center p-6 rounded-xl gap-6">
+      <MoodTracker />
+
       <InfoCard
         title="Om sidan"
-        ingress="Stress är en naturlig reaktion i kroppen som uppstår när vi upplever hot eller fara."
-        text="Stress kan vara både positivt och negativt. Positiv stress kan hjälpa oss att prestera bättre i vissa situationer, medan negativ stress kan leda till ohälsa och sjukdom."
-        link="https://www.1177.se/Vastra-Gotaland/liv--halsa/stresshantering-och-somn/stress/https://www.1177.se/sjukdomar--besvar/stress-och-angest/"
+        ingress="❤ Mental hälsa ger dig lite information om olika psykiska tillstånd och hur du kan hantera dem."
+        text="Här kan du läsa om depression, ångest, stress och utmattningssyndrom. Du kan också hitta resurser för att få hjälp. Här kan du läsa mer om de olika tillstånden och hur du kan hantera dem."
+        link="https://www.1177.se/"
         imageUrl="../src/assets/homepage.jpg"
-        altText="Person som hanterar stress"
+        altText="En tavla med texten Self care isn't selfish på en vägg."
       />
     </div>
   );
