@@ -1,16 +1,29 @@
-// import { Link } from "react-router";
-// import { Artist } from "../data";
+import { Link } from "react-router";
+import Button from "./Button";
 
-// interface Props {
-//   artist: Artist;
-// }
-
-// export default function ArtistCard(props: Props) {
-//   return (
-//     <Link to={`artists/${props.artist.slug}/${props.artist.id}`} className="p-2 hover:bg-slate-800 rounded">
-//       <img className="rounded-full" src={props.artist.imageUrl} />
-//       <h3>{props.artist.name}</h3>
-//       <span className="text-sm text-slate-300">Artists</span>
-//     </Link>
-//   );
-// }
+export default function Aside() {
+  return (
+    <div className="flex gap-2 bg-green-900 text-2xl p-8 rounded-3xl mt-6 ml-1">
+      <nav className="flex flex-col gap-6">
+        <Link to="/">
+          <Button>Hem</Button>
+        </Link>
+        <Link to="/depression">
+          <Button>Depression</Button>
+        </Link>
+        <Link to="/anxiety">
+          <Button>Ångest</Button>
+        </Link>
+        <Link to="/stress">
+          <Button>Stress</Button>
+        </Link>
+        <Link to="/burnout">
+          <Button>Utmattning</Button>
+        </Link>
+        <Link to="/resources">
+          <Button>Resurser</Button>
+        </Link>
+      </nav>
+    </div>
+  );
+}
