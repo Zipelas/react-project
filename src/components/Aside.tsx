@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import Button from "./Button";
+import ChrisisButton from "./ChrisisButton";
 
 export default function Aside() {
   return (
@@ -22,6 +23,9 @@ export default function Aside() {
         </Link>
         <Link to="/resources">
           <Button>Resurser</Button>
+        </Link>
+        <Link to="/emergency">
+          <ChrisisButton>Akut hjälp</ChrisisButton>
         </Link>
       </nav>
     </div>
