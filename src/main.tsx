@@ -22,7 +22,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="stress" element={<Stress />} />
           <Route path="burnout" element={<Burnout />} />
           <Route path="resources" element={<Resources />} />
-          <Route path="resources" element={<Emergency />} />
+          <Route path="emergency" element={<Emergency />} />
           <Route path="*" element={<NotFound />} /> {/* 404-sida */}
         </Route>
       </Routes>
