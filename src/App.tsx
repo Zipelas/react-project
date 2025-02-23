@@ -1,13 +1,21 @@
+import { useState } from "react";
 import { Outlet } from "react-router";
 import Aside from "./components/Aside";
 import Header from "./components/Header";
 
-export default function MediaPlayerLayout() {
+export default function App() {
+  // State för att hantera bakgrundsfärg
+  const [isCrisisMode, setIsCrisisMode] = useState(false);
+
   return (
     <div className="flex flex-col text-slate-50">
-      <Header />
+      <Header bgColor={isCrisisMode ? "bg-red-600" : "bg-green-900"} />
       <div className="flex gap-2">
-        <Aside />
+        <Aside
+          bgColor={isCrisisMode ? "bg-red-600" : "bg-green-900"}
+          setIsCrisisMode={setIsCrisisMode}
+          isCrisisMode={isCrisisMode}
+        />
 
         <main className="p-4 flex-1">
           <Outlet />
