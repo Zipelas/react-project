@@ -1,16 +1,17 @@
-// import { Link } from "react-router";
-// import { Artist } from "../data";
+import { ReactNode } from "react";
 
-// interface Props {
-//   artist: Artist;
-// }
+interface Props {
+  children: ReactNode;
+  onClick?: () => void;
+}
 
-// export default function ArtistCard(props: Props) {
-//   return (
-//     <Link to={`artists/${props.artist.slug}/${props.artist.id}`} className="p-2 hover:bg-slate-800 rounded">
-//       <img className="rounded-full" src={props.artist.imageUrl} />
-//       <h3>{props.artist.name}</h3>
-//       <span className="text-sm text-slate-300">Artists</span>
-//     </Link>
-//   );
-// }
+export default function ChrisisButton({ children, onClick }: Props) {
+  return (
+    <button
+      className="text-2xl min-w-40 px-4 py-8 text-left rounded hover:bg-red-600 transition"
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+}
