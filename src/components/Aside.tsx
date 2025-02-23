@@ -2,30 +2,54 @@ import { Link } from "react-router";
 import Button from "./Button";
 import ChrisisButton from "./ChrisisButton";
 
-export default function Aside() {
+interface Props {
+  bgColor: string;
+  setIsCrisisMode: (value: boolean) => void;
+  isCrisisMode: boolean;
+}
+
+export default function Aside({
+  bgColor,
+  setIsCrisisMode,
+  isCrisisMode,
+}: Props) {
   return (
-    <div className="flex gap-2 bg-green-900 text-2xl p-8 rounded-3xl mt-6 ml-1">
+    <div className={`flex gap-2 ${bgColor} text-2xl p-8 rounded-3xl mt-6 ml-1`}>
       <nav className="flex flex-col gap-6">
         <Link to="/">
-          <Button>Hem</Button>
+          <Button onClick={() => isCrisisMode && setIsCrisisMode(false)}>
+            Hem
+          </Button>
         </Link>
         <Link to="/depression">
-          <Button>Depression</Button>
+          <Button onClick={() => isCrisisMode && setIsCrisisMode(false)}>
+            Depression
+          </Button>
         </Link>
         <Link to="/anxiety">
-          <Button>Ångest</Button>
+          <Button onClick={() => isCrisisMode && setIsCrisisMode(false)}>
+            Ångest
+          </Button>
         </Link>
         <Link to="/stress">
-          <Button>Stress</Button>
+          <Button onClick={() => isCrisisMode && setIsCrisisMode(false)}>
+            Stress
+          </Button>
         </Link>
         <Link to="/burnout">
-          <Button>Utmattning</Button>
+          <Button onClick={() => isCrisisMode && setIsCrisisMode(false)}>
+            Utmattning
+          </Button>
         </Link>
         <Link to="/resources">
-          <Button>Resurser</Button>
+          <Button onClick={() => isCrisisMode && setIsCrisisMode(false)}>
+            Resurser
+          </Button>
         </Link>
         <Link to="/emergency">
-          <ChrisisButton>Akut hjälp</ChrisisButton>
+          <ChrisisButton onClick={() => setIsCrisisMode(true)}>
+            Akut hjälp
+          </ChrisisButton>
         </Link>
       </nav>
     </div>
