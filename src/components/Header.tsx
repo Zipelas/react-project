@@ -1,16 +1,7 @@
-// import { Link } from "react-router";
-// import { Artist } from "../data";
-
-// interface Props {
-//   artist: Artist;
-// }
-
-// export default function ArtistCard(props: Props) {
-//   return (
-//     <Link to={`artists/${props.artist.slug}/${props.artist.id}`} className="p-2 hover:bg-slate-800 rounded">
-//       <img className="rounded-full" src={props.artist.imageUrl} />
-//       <h3>{props.artist.name}</h3>
-//       <span className="text-sm text-slate-300">Artists</span>
-//     </Link>
-//   );
-// }
+export default function Header() {
+    return (
+        <div className="flex items-center justify-center bg-green-900 text-3xl px-8 py-4 font-bold rounded-3xl m-1">
+        <span className="mr-2">❤</span> Mental hälsa
+      </div>
+    );
+}
