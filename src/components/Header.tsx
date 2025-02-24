@@ -1,13 +1,89 @@
+import { Menu, X } from "lucide-react"; // 📌 Ikoner för hamburgermeny och stäng-knapp
+import { useEffect, useState } from "react";
+import Aside from "./Aside";
+
 interface Props {
   bgColor: string;
+  setIsCrisisMode: (value: boolean) => void;
+  isCrisisMode: boolean;
 }
 
-export default function Header({ bgColor }: Props) {
+export default function Header({
+  bgColor,
+  setIsCrisisMode,
+  isCrisisMode,
+}: Props) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // 📌 Funktion för att stänga menyn när man klickar utanför
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const menuElement = document.getElementById("mobile-menu");
+      if (
+        menuOpen &&
+        menuElement &&
+        !menuElement.contains(event.target as Node)
+      ) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuOpen]);
+
   return (
-    <div
-      className={`flex items-center justify-center ${bgColor} text-3xl px-8 py-4 font-bold rounded-3xl m-1`}
-    >
-      <span className="mr-2">❤</span> Mental hälsa
-    </div>
+    <>
+      {/* Header */}
+      <div
+        className={`flex items-center ${bgColor} text-white text-3xl px-8 py-4 font-bold rounded-3xl m-1 w-full`}
+      >
+        {/* Mobil-layout (< 768px) → Text till vänster, Hamburgermeny till höger */}
+        <div className="flex w-full md:hidden justify-between items-center">
+          <h1 className="text-2xl font-bold">❤ Mental hälsa</h1>
+
+          {/* Hamburgermeny-knapp */}
+          <button
+            className="text-white text-3xl"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <X /> : <Menu />}
+          </button>
+        </div>
+
+        {/* Desktop-layout (> 768px) → Texten är centrerad */}
+        <h1 className="hidden md:block w-full text-center text-2xl font-bold">
+          ❤ Mental hälsa
+        </h1>
+      </div>
+
+      {/* Hamburgermenyn visas endast om menuOpen är true */}
+      {menuOpen && (
+        <div
+          id="mobile-menu"
+          className="fixed top-[90px] right-0 h-[80vh] w-1/2 bg-green-900 text-white p-6 shadow-lg rounded-3xl mr-1 overflow-y-auto md:hidden transition-transform transform translate-x-0"
+        >
+          {/* Stäng-knapp (X-ikon) */}
+          <button
+            className="absolute top-4 right-4 text-white text-3xl"
+            onClick={() => setMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            <X />
+          </button>
+
+          {/* Meny (Aside.tsx) */}
+          <Aside
+            bgColor="bg-green-900"
+            setIsCrisisMode={setIsCrisisMode}
+            isCrisisMode={isCrisisMode}
+            closeMenu={() => setMenuOpen(false)}
+          />
+        </div>
+      )}
+    </>
   );
 }
