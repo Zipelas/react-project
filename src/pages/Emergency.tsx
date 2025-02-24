@@ -2,7 +2,7 @@ import InfoCard from "../components/InfoCard";
 
 export default function Emergency() {
   return (
-    <div className="bg-red-600 min-h-screen flex justify-center p-6 rounded-xl">
+    <div className="bg-red-600 min-h-screen flex justify-center p-6 rounded-3xl mt-6">
       <InfoCard
         title="Akut"
         ingress="Här hittar du länkar som hjälper dig om läget är akut"
