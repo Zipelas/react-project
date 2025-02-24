@@ -41,9 +41,9 @@ export default function Aside({
             Utmattning
           </Button>
         </Link>
-        <Link to="/resources">
+        <Link to="/who">
           <Button onClick={() => isCrisisMode && setIsCrisisMode(false)}>
-            Resurser
+            WHO
           </Button>
         </Link>
         <Link to="/emergency">
