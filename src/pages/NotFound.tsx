@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 export default function NotFound() {
   return (
@@ -10,7 +10,6 @@ export default function NotFound() {
       <p className="text-lg text-gray-600 mb-6">
         Sidan du letar efter finns inte eller har flyttats.
       </p>
-
 
       {/* Knapp tillbaka till hem */}
       <Link
