@@ -17,7 +17,7 @@ export default function App() {
           isCrisisMode={isCrisisMode}
         />
 
-        <main className="p-4 flex-1">
+        <main className="flex-1 ml-4">
           <Outlet />
         </main>
       </div>
