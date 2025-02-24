@@ -4,7 +4,7 @@ import InfoCard from "../components/InfoCard";
 const PEXELS_API_KEY =
   "5nP4bLcAUL6yzDxvrQ96GDVPS9wgpafc4zD3q1DzNkQx2lyeWopBkexy";
 const SEARCH_QUERY = "mental health + yoga";
-const API_URL = `https://api.pexels.com/v1/search?query=${SEARCH_QUERY}&per_page=6`;
+const API_URL = `https://api.pexels.com/v1/search?query=${SEARCH_QUERY}&per_page=5`;
 
 interface PexelsPhoto {
   id: number;
@@ -31,7 +31,7 @@ export default function WHO() {
       })
       .then((jsonData) => {
         console.log("Pexels API Response:", jsonData);
-        setImages(jsonData.photos); // Sparar de hämtade bilderna
+        setImages(jsonData.photos);
         setLoading(false);
       })
       .catch((err) => {
@@ -50,7 +50,8 @@ export default function WHO() {
       {loading && <p className="text-xl">Laddar bilder...</p>}
       {error && <p className="text-xl text-red-500">Fel: {error}</p>}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Flex istället för grid */}
+      <div className="flex flex-wrap justify-center gap-6 w-full max-w-5xl">
         {images.map((image) => (
           <InfoCard
             key={image.id}
