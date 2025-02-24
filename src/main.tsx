@@ -5,11 +5,11 @@ import App from "./App.tsx";
 import Anxiety from "./pages/Anxiety.tsx";
 import Burnout from "./pages/Burnout.tsx";
 import Depression from "./pages/Depression.tsx";
+import Emergency from "./pages/emergency.tsx";
 import Home from "./pages/Home.tsx";
 import NotFound from "./pages/NotFound.tsx";
-import Resources from "./pages/Resources.tsx";
 import Stress from "./pages/Stress.tsx";
-import Emergency from "./pages/emergency.tsx";
+import WHO from "./pages/WHO.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -21,7 +21,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="anxiety" element={<Anxiety />} />
           <Route path="stress" element={<Stress />} />
           <Route path="burnout" element={<Burnout />} />
-          <Route path="resources" element={<Resources />} />
+          <Route path="who" element={<WHO />} />
           <Route path="emergency" element={<Emergency />} />
           <Route path="*" element={<NotFound />} /> {/* 404-sida */}
         </Route>
