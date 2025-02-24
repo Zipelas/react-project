@@ -14,7 +14,7 @@ export default function NotFound() {
       {/* Knapp tillbaka till hem */}
       <Link
         to="/"
-        className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full text-lg font-semibold transition"
+        className="bg-green-800 hover:bg-green-700 text-white px-6 py-3 rounded-full text-lg font-semibold transition"
       >
         Tillbaka till Hem
       </Link>
