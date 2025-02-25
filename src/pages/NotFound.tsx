@@ -21,8 +21,8 @@ export default function NotFound() {
       <p>&nbsp;</p>
       {/* Bild */}
       <img
-        src="../src/assets/burnout.jpg"
-        alt="Lost"
+        src="https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=400"
+        alt="Emergency"
         className="rounded-lg shadow-lg mb-6"
       />
     </div>
