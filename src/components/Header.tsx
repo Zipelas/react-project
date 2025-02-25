@@ -47,10 +47,10 @@ export default function Header({
           {/* Hamburgermeny-knapp */}
           <button
             className="text-white text-3xl"
-            onClick={() => setMenuOpen(!menuOpen)}
+            onClick={() => setMenuOpen(true)}
             aria-label="Toggle menu"
           >
-            {menuOpen ? <X /> : <Menu />}
+            <Menu />
           </button>
         </div>
 
@@ -60,30 +60,30 @@ export default function Header({
         </h1>
       </div>
 
-      {/* Hamburgermenyn visas endast om menuOpen är true */}
-      {menuOpen && (
-        <div
-          id="mobile-menu"
-          className="fixed top-[90px] right-0 h-[80vh] w-1/2 bg-green-900 text-white p-6 shadow-lg rounded-3xl mr-1 overflow-y-auto md:hidden transition-transform transform translate-x-0"
+      {/* Hamburgermenyn 50% bred även på 330px, full scrollbar vid behov */}
+      <div
+        id="mobile-menu"
+        className={`fixed top-[90px] right-0 h-[80vh] w-1/2 min-w-[165px] max-w-[330px] bg-green-900 text-white p-6 shadow-lg rounded-3xl mr-1 overflow-y-auto md:hidden transition-transform transform ${
+          menuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {/* Stäng-knapp (X-ikon) */}
+        <button
+          className="absolute top-4 right-4 text-white text-3xl"
+          onClick={() => setMenuOpen(false)}
+          aria-label="Close menu"
         >
-          {/* Stäng-knapp (X-ikon) */}
-          <button
-            className="absolute top-4 right-4 text-white text-3xl"
-            onClick={() => setMenuOpen(false)}
-            aria-label="Close menu"
-          >
-            <X />
-          </button>
+          <X />
+        </button>
 
-          {/* Meny (Aside.tsx) */}
-          <Aside
-            bgColor="bg-green-900"
-            setIsCrisisMode={setIsCrisisMode}
-            isCrisisMode={isCrisisMode}
-            closeMenu={() => setMenuOpen(false)}
-          />
-        </div>
-      )}
+        {/* Meny (Aside.tsx) */}
+        <Aside
+          bgColor="bg-green-900"
+          setIsCrisisMode={setIsCrisisMode}
+          isCrisisMode={isCrisisMode}
+          closeMenu={() => setMenuOpen(false)}
+        />
+      </div>
     </>
   );
 }

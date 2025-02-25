@@ -6,7 +6,7 @@ interface Props {
   bgColor: string;
   setIsCrisisMode: (value: boolean) => void;
   isCrisisMode: boolean;
-  closeMenu?: () => void; // 📌 Funktion för att stänga hamburgermenyn
+  closeMenu?: () => void; 
 }
 
 export default function Aside({
@@ -16,10 +16,8 @@ export default function Aside({
   closeMenu,
 }: Props) {
   return (
-    <div
-      className={`md:flex flex-col md:w-64 w-full ${bgColor} text-2xl p-8 rounded-3xl mt-6 ml-1`}
-    >
-      <nav className="flex flex-col gap-6">
+    <div className={`flex flex-col ${bgColor} text-2xl p-4 ml-1 rounded-3xl w-full`}>
+      <nav className="flex flex-col gap-4">
         <Link to="/" onClick={closeMenu}>
           <Button onClick={() => isCrisisMode && setIsCrisisMode(false)}>
             Hem
