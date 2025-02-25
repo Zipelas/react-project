@@ -8,7 +8,7 @@ export default function Emergency() {
         ingress="Här hittar du länkar som hjälper dig om läget är akut"
         text="1177"
         link="https://www.1177.se/"
-        imageUrl="../src/assets/emergency.jpg"
+        imageUrl="https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=400"
         altText="Emergency-skylt"
       />
     </div>
