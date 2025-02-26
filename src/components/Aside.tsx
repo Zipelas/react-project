@@ -6,7 +6,7 @@ interface Props {
   bgColor: string;
   setIsCrisisMode: (value: boolean) => void;
   isCrisisMode: boolean;
-  closeMenu?: () => void; 
+  closeMenu?: () => void;
 }
 
 export default function Aside({
@@ -16,7 +16,9 @@ export default function Aside({
   closeMenu,
 }: Props) {
   return (
-    <div className={`flex flex-col ${bgColor} text-2xl p-4 ml-1 rounded-3xl w-full`}>
+    <div
+      className={`flex flex-col ${bgColor} text-2xl p-4 ml-1 rounded-3xl w-full mt-6`}
+    >
       <nav className="flex flex-col gap-4">
         <Link to="/" onClick={closeMenu}>
           <Button onClick={() => isCrisisMode && setIsCrisisMode(false)}>
