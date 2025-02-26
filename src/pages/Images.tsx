@@ -12,7 +12,7 @@ interface PexelsPhoto {
   alt: string;
 }
 
-export default function WHO() {
+export default function Images() {
   const [images, setImages] = useState<PexelsPhoto[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
