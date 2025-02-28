@@ -3,17 +3,23 @@ import MoodTracker from "../components/MoodTracker";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col-reverse items-center justify-center p-6 rounded-xl gap-6">
-      <MoodTracker />
+    <div className="bg-green-500 min-h-screen flex flex-col items-center p-4 md:p-12 w-full max-w-screen">
+      <div className="flex flex-col-reverse items-center gap-6 w-full max-w-5xl">
+        <div className="w-full">
+          <InfoCard
+            title="Om sidan"
+            ingress="Denna sida handlar om mental hälsa och ger information och resurser."
+            text="Här kan du läsa om olika aspekter av mental hälsa och få tips för att hantera stress, ångest och utbrändhet."
+            link="https://www.1177.se"
+            imageUrl="../src/assets/homepage.jpg"
+            altText="Person som hanterar stress"
+          />
+        </div>
 
-      <InfoCard
-        title="Om sidan"
-        ingress="❤ Mental hälsa ger dig lite information om olika psykiska tillstånd och hur du kan hantera dem."
-        text="Här kan du läsa om depression, ångest, stress och utmattningssyndrom. Du kan också hitta resurser för att få hjälp. Här kan du läsa mer om de olika tillstånden och hur du kan hantera dem."
-        link="https://www.1177.se/"
-        imageUrl="https://images.pexels.com/photos/2821823/pexels-photo-2821823.jpeg?auto=compress&cs=tinysrgb&w=400"
-        altText="En tavla med texten Self care isn't selfish på en vägg."
-      />
+        <div className="w-full">
+          <MoodTracker />
+        </div>
+      </div>
     </div>
   );
 }
